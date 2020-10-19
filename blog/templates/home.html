@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IQcodec Blog</title>
+</head>
+<body>
+        {% extends 'base.html' %}
+        {% load static %}
+
+        {% block content %}
+            {% for Post in object_list %}
+                <div class="post_entry">
+            <h2><a href="{% url 'post_detail' Post.pk %}">{{ Post.title }}</a> </h2>
+                <p>{{ Post.text }}</p>
+                </div>
+            {% endfor %}
+
+        {% endblock %}
+</body>
+</html>
